@@ -1,0 +1,40 @@
+#!/bin/bash
+
+function not_found()
+{
+  echo none
+  exit 1
+}
+
+# user@fqdn
+USER_FQDN="$USER@$(hostname -f)"
+
+case "$USER_FQDN" in
+  francis@*.core.destinatech)
+    path_list=(
+      $HOME/java
+      $HOME/java/jdk
+      $HOME/java/jdk/current-17
+      $HOME/java/jdk/current-17/bin
+    )
+    for path in "${path_list[@]}"
+    do
+      [[ -d $path ]] && continue
+
+      # No JDK found
+      break
+    done
+
+    [[ -x $HOME/java/jdk/current-17/bin/java ]] && {
+      echo "$HOME/java/jdk/current-17"
+      exit 1
+    }
+    ;;
+esac
+
+# No JDK found
+not_found
+
+##
+# vim: ts=2 sw=2 et fdm=marker :
+##

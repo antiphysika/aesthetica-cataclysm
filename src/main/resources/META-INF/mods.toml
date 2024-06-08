@@ -1,0 +1,37 @@
+modLoader="javafml"
+loaderVersion="[${fml},)"
+license="Apache License 2.0"
+issueTrackerURL="https://www.github.com/antiphysika/aesthetica-cataclysm/issues"
+
+[[mods]]
+modId="aesthetica_cataclysm"
+version="${version}"
+displayName="Aesthetica: Cataclysm"
+#updateJSONURL="https://antiphysika.dev/mods/aesthetica-cataclysm/updates.json"
+updateJSONURL="https://raw.githubusercontent.com/antiphysika/aesthetica-cataclysm/main/updates.json"
+displayURL="https://www.curseforge.com/members/antiphysika"
+authors="Anti-Physika"
+description='''
+Main content mod for the Aesthetica: Cataclysm modpack
+'''
+
+[[dependencies.aesthetica_cataclysm]]
+    modId = "minecraft"
+    mandatory = true
+    versionRange="[${minecraft},)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.aesthetica_cataclysm]]
+    modId = "forge"
+    mandatory = true
+    versionRange="[${forge},)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.aesthetica_cataclysm]]
+    modId = "libx"
+    mandatory = true
+    versionRange="[1.20.1-5.0.5,)"
+    ordering = "AFTER"
+    side = "BOTH"
